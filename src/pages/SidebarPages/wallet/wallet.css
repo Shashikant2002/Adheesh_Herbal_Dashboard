@@ -1,0 +1,27 @@
+.ranges_div {
+    /* border: 1px solid red; */
+}
+.ranges_div .range_area{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.button_add_range{
+    /* margin-top: 20px; */
+    /* display: flex; */
+    /* justify-content: end; */
+}
+.add-range-main-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.wallet-active-on-off-box{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 10px;
+}
