@@ -1128,10 +1128,12 @@ function ViewOrder({ handleClose }) {
                                   "amount"
                                     ? orderDetail?.coupon_discount
                                         .discount_value
-                                    : (orderDetail?.coupon_discount
-                                        .discount_value /
-                                        100) *
-                                      parseInt(orderDetail?.order_total)}
+                                    : (
+                                        (orderDetail?.coupon_discount
+                                          .discount_value /
+                                          100) *
+                                        parseInt(orderDetail?.order_total)
+                                      ).toFixed(1)}
                                 </p>
                               </>
                             ) : (

@@ -289,14 +289,19 @@ function Invoice({ orderDetail }) {
                       {orderDetail?.coupon_discount ? (
                         <>
                           <p className="total-amount-box">
-                            <strong>Coupon Discount ({orderDetail?.coupon_discount?.coupon_code}) :</strong> - Rs.{" "}
+                            <strong>
+                              Coupon Discount (
+                              {orderDetail?.coupon_discount?.coupon_code}) :
+                            </strong>{" "}
+                            - Rs.{" "}
                             {/* {orderDetail.coupon_discount.discount_value} */}
-                            {orderDetail?.coupon_discount?.discount_type?.toLowerCase() ==
+                            {(orderDetail?.coupon_discount?.discount_type?.toLowerCase() ==
                             "amount"
                               ? orderDetail?.coupon_discount.discount_value
                               : (orderDetail?.coupon_discount.discount_value /
                                   100) *
-                                parseInt(orderDetail?.order_total)}
+                                parseInt(orderDetail?.order_total)
+                            ).toFixed(1)}
                           </p>
                         </>
                       ) : (
@@ -330,7 +335,7 @@ function Invoice({ orderDetail }) {
                             : parseInt(orderDetail?.order_total) -
                               orderDetail?.used_wallet_amount?.coins_used *
                                 orderDetail?.used_wallet_amount?.coin_value} */}
-                          {orderDetail?.coupon_discount?.discount_value
+                          {(orderDetail?.coupon_discount?.discount_value
                             ? parseInt(orderDetail?.order_total) -
                               orderDetail?.used_wallet_amount?.coins_used *
                                 orderDetail?.used_wallet_amount?.coin_value -
@@ -345,7 +350,8 @@ function Invoice({ orderDetail }) {
                               )
                             : parseInt(orderDetail?.order_total) -
                               orderDetail?.used_wallet_amount?.coins_used *
-                                orderDetail?.used_wallet_amount?.coin_value}
+                                orderDetail?.used_wallet_amount?.coin_value
+                          ).toFixed(1)}
                         </strong>
                       </p>
                     </div>
